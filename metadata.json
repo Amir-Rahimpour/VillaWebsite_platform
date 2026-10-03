@@ -1,0 +1,6 @@
+{
+  "name": "ویلاجا | Villajah Luxury Stay",
+  "description": "پلتفرم اختصاصی رزرو لوکس‌ترین عمارت‌ها، ویلاهای استخردار و پنت‌هاوس‌های صخره‌ای ایران با سرویس تشریفات و پشتیبانی ۲۴ ساعته",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

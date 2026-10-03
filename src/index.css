@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Vazirmatn', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Vazirmatn', system-ui, -apple-system, sans-serif;
+
+  --color-primary: #8d4b00;
+  --color-primary-container: #b15f00;
+  --color-primary-fixed: #ffdcc3;
+  --color-secondary: #855300;
+  --color-secondary-container: #fea619;
+  --color-secondary-fixed: #ffddb8;
+  --color-surface: #FAF8F5;
+  --color-surface-dim: #f0ecf4;
+  --color-on-surface: #1b1b1e;
+  --color-on-surface-variant: #554336;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    direction: rtl;
+    background-color: #f7f4ee;
+    color: #1b1b1e;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+}
+
+/* Luxurious Frosted Glass Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(180, 115, 45, 0.32);
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 2px 6px rgba(141, 75, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 115, 45, 0.65);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 1), 0 4px 12px rgba(180, 115, 45, 0.35);
+}
+
+/* Custom Hide Scrollbar Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism Classes (Full Glass Luxury) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 16px 40px -8px rgba(24, 24, 27, 0.05), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(141, 75, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.glass-pill-dark {
+  background: rgba(30, 26, 22, 0.8);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Glass Optical Refraction Grid Pattern */
+.glass-grid-pattern {
+  background-image: radial-gradient(rgba(141, 75, 0, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Ambient Floating Glass Light Orbs Animations */
+@keyframes floatOrb1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(45px, -35px) scale(1.08);
+  }
+  66% {
+    transform: translate(-30px, 25px) scale(0.95);
+  }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-50px, 40px) scale(1.12);
+  }
+  66% {
+    transform: translate(35px, -20px) scale(0.92);
+  }
+}
+
+@keyframes floatOrb3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  40% {
+    transform: translate(40px, 45px) scale(1.06);
+  }
+  75% {
+    transform: translate(-25px, -30px) scale(0.96);
+  }
+}
+
+@keyframes floatOrb4 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-40px, -35px) scale(1.1);
+  }
+}
+
+.animate-float-orb-1 {
+  animation: floatOrb1 18s ease-in-out infinite;
+}
+
+.animate-float-orb-2 {
+  animation: floatOrb2 22s ease-in-out infinite;
+}
+
+.animate-float-orb-3 {
+  animation: floatOrb3 20s ease-in-out infinite;
+}
+
+.animate-float-orb-4 {
+  animation: floatOrb4 24s ease-in-out infinite;
+}
+
+/* Scroll-Down Indicator Animations */
+@keyframes smoothScrollWheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes scrollBounceGlow {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px rgba(141, 75, 0, 0.12);
+  }
+  50% {
+    transform: translateY(7px);
+    box-shadow: 0 12px 30px rgba(141, 75, 0, 0.24);
+  }
+}
+
+@keyframes pulseRippleRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-scroll-wheel {
+  animation: smoothScrollWheel 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-scroll-bounce {
+  animation: scrollBounceGlow 2.4s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulseRippleRing 3s ease-in-out infinite;
+}
+
+/* Scroll-linked Reveal Transition Utility */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
